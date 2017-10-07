@@ -1,5 +1,5 @@
 form {
-    border: 3px solid #f1f1f1;
+    border: 0px solid #f1f1f1;
 }
 
 body{
@@ -53,11 +53,21 @@ img.avatar {
 
 /* Add padding to containers */
 .containerA{
-    padding-top: 8%;
+    padding-top: 4%;
     margin: 0 auto;
     width:50%;
 
 }
+
+.containerB{
+    padding-top: 0%;
+    margin: 0 auto;
+    width:50%;
+
+}
+
+
+
 
 .sbmt{
     width:50%;

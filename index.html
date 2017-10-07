@@ -2,7 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>SMB</title>
-</head>
+    <link rel="icon" type="image/png" href="smblogo.png" />
+</head> 
 <body>
 <form action="/action_page.php">
     <div class="imgcontainer">
@@ -20,12 +21,18 @@
       <button style="width:100%,float:left" type="submit">Login</button>
     </div>
     <div>
-        <button style="width:100%,float:right" type="submit">Register</button>
+        <button style="width:100%,float:right" onclick="Redirect()">Register</button>
     </div>
     </div>
     </div>
-  
-    
   </form>
 </body> 
 </html>
+
+<!-- JavaScript -->
+<script type="text/javascript">
+
+     function Redirect() {
+        window.location="register.html";
+     }
+</script>
