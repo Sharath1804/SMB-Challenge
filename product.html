@@ -1,0 +1,103 @@
+<html>
+    
+    <head>
+      <link rel="stylesheet" type="text/css" href="stylesheet.css">
+      <title>SMB</title>
+      <link rel="icon" type="image/png" href="smblogo.png" />
+    </head>
+    <div id="tog" scroll="no" style="overflow-x: hidden">
+    
+      <body>
+        <form action="/regPage.php">
+          <h1 align="center" style="font-size:50px">Product Details</h1>
+          <div class="containerB">
+            <label><b>Product Name</b>
+            </label>
+            <input type="text" placeholder="Enter Product Name" name="pname" required>
+            <p></p>
+            <label><b>Comments</b>
+            </label>
+            <br>
+            <textarea style="height: 128px;width:538px" placeholder="Enter your comments"></textarea>
+            <p></p>
+            <div>
+              <label><b>Radius in Km</b>
+              </label>
+              <input type="text" name="radius" placeholder="Radius in Km" required>
+            </div>
+            <label>
+              <input type="radio" name="post-format" id="post-format-gallery" checked>Closer to Customer</label>
+            <label>
+              <input type="radio" name="post-format">Closer to Me</label>
+              <p></p>
+            <div id="toggling">
+              <label><b>Enter the place</b>
+              </label>
+              <input id="searchTextField" type="text" size="50" placeholder="Enter a location" autocomplete="off" />
+              <input type="hidden" id="city2" name="city2" />
+              <p></p>
+              <label><b>Position</b>
+              </label>
+              <input type="text" id="position" name="pos" placeholder="Position" />
+            </div>
+            <div class="sbmt">
+              <div>
+                <button style="width:100%,float:left" type="submit" onclick="hiding()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <input type="hidden" value="Reload" onClick="window.location.reload()" />
+    </div>
+    <div id="next" style="visibility:hidden" class="containerB">
+      <div style="inline">
+        <iframe src="register.html" height="400" width="500px"></iframe>
+        <br>
+        <p></p>
+        <button type="submit" id="back" onclick="reverse()">Go Back</button>
+      </div>
+      </body>
+    
+    </html>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+          $('input[name=post-format]').on('click init-post-format', function() {
+              $('#toggling').toggle($('#post-format-gallery').prop('checked'));
+          }).trigger('init-post-format');
+      });
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+          var input = document.getElementById('searchTextField');
+          var autocomplete = new google.maps.places.Autocomplete(input);
+          google.maps.event.addListener(autocomplete, 'place_changed', function() {
+              var place = autocomplete.getPlace();
+              document.getElementById('city2').value = place.name;
+              var lat = place.geometry.location.lat();
+              var long = place.geometry.location.lng();
+              document.getElementById('position').value = lat+","+long;
+              //alert("This function is working!");
+              //alert(place.name);
+             // alert(place.address_components[0].long_name);
+      
+          });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+      function hiding() {
+              var el = document.getElementById('tog');
+              var ele = document.getElementById('next');
+              el.style.display = 'none';
+              ele.style.visibility ='visible';
+               }
+          function reverse() {
+              var el = document.getElementById('tog');
+              var ele = document.getElementById('next');
+              el.style.display = 'block';
+              ele.style.visibility ='hidden';
+      
+          }
+    </script>

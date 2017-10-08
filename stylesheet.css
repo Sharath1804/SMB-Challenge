@@ -1,9 +1,46 @@
+html { 
+    background: url() no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 form {
     border: 0px solid #f1f1f1;
 }
+#map {
+    height: 100%;
+  }
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+
+  #infowindow-content {
+    display: none;
+  }
+
+  #map #infowindow-content {
+    display: inline;
+  }
+
+
+.header {
+    background-color: blue;
+    width=40px;
+}
+/*Nav Bar*/
+
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+    overflow: scroll;
 }
 /* Full-width inputs */
 input[type=text], input[type=password] {
@@ -15,6 +52,9 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+#i-frame {
+    visibility: hidden;
+}
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
@@ -53,20 +93,33 @@ img.avatar {
 
 /* Add padding to containers */
 .containerA{
-    padding-top: 4%;
+    padding-top: 0%;
     margin: 0 auto;
-    width:50%;
+    width:35%;
 
 }
 
 .containerB{
     padding-top: 0%;
     margin: 0 auto;
-    width:50%;
+    width:40%;
 
 }
 
+.containerC{
+    padding-top: 0%;
+    margin: 0 auto;
+    width:40%;
 
+
+}
+
+#id {
+    display: block;
+    margin: 0 auto;
+    width:50%;
+  
+}
 
 
 .sbmt{
